@@ -2,6 +2,7 @@ package prime_factorization;
 
 import static org.junit.Assert.*;
 import static prime_factorization.PrimeFactorizer.computePrimeFactors;
+import static prime_factorization.PrimeFactorizer.computePrimeFactorsSmart;
 import static prime_factorization.PrimeFactorizer.computePrimes;
 
 import org.junit.Test;
@@ -17,9 +18,17 @@ public class PrimeFactorizerTest {
 	@Test
 	public void testComputePrimeFactors() {
 		String factorsOf13195 = "[5, 7, 13, 29]";
-		System.out.println(factorsOf13195);
-		System.out.println(computePrimeFactors(13195));
+//		System.out.println(factorsOf13195);
+//		System.out.println(computePrimeFactors(13195));
 		assertTrue(factorsOf13195.equals(computePrimeFactors(13195).toString()));
+	}
+	
+	@Test
+	public void testComputePrimeFactorsSmart() {
+		String factorsOf13195 = "[5, 7, 13, 29]";
+//		System.out.println(factorsOf13195);
+//		System.out.println(computePrimeFactorsSmart(13195));
+		assertTrue(factorsOf13195.equals(computePrimeFactorsSmart(13195).toString()));
 	}
 	
 	@Test (expected = IllegalArgumentException.class)

@@ -3,9 +3,11 @@ package prime_factorization;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /* Project Euler Problem 3:
- * What is the largest prime factor of the number 600851475143
+ * Find the largest prime factor of the number 600851475143
  */
 
 public class PrimeFactorizer {
@@ -14,10 +16,8 @@ public class PrimeFactorizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		System.out.println(computePrimes(6008514));
-//		System.out.println(computePrimeFactors(600851475143L));
-//		System.out.println(10 % 7);
+
+		System.out.println(computePrimeFactorsSmart(600851475143L));
 
 	}
 
@@ -50,26 +50,44 @@ public class PrimeFactorizer {
 		return primes;
 	}
 	
-//	public static List<Long> getPrimesBetween(long lowerBound, long upperBound) {
-//		List<Long> primesBetween = new LinkedList<Long>();
-//		List<Long> primes = computePrimeFactors(upperBound);
-//		return null;
-//	}
+	/**
+	 * @param n The integer to factor
+	 * @return The prime factors of n
+	 * @throws IllegalArgumentException if n is less than 2
+	 */
+	public static SortedSet<Long> computePrimeFactors(long n) {
+		if (n < 2) throw new IllegalArgumentException("n is less than 2");
+
+		List<Long> primes = computePrimes(n);
+		SortedSet<Long> primeFactors = new TreeSet<Long>();
+		for (long p : primes) {
+			if (n % p == 0) { primeFactors.add(p); }
+		}
+
+		return primeFactors;
+	}
 	
 	/**
 	 * @param n The integer to factor
 	 * @return The prime factors of n
 	 * @throws IllegalArgumentException if n is less than 2
 	 */
-	public static List<Long> computePrimeFactors(long n) {
-		if (n < 2) throw new IllegalArgumentException("n is less than 2");
+	public static SortedSet<Long> computePrimeFactorsSmart(long n) {
+		if (n < 2) throw new IllegalArgumentException("value to factor is less than 2");
 
-		List<Long> primes = computePrimes(n);
-		List<Long> primeFactors = new LinkedList<Long>();
-		for (long p : primes) {
-			if (n % p == 0) { primeFactors.add(p); }
+		SortedSet<Long> primeFactors = new TreeSet<Long>();
+		long k = n;
+		long f = 2;
+		while (f <= k) {
+			if (k % f == 0) {
+				// factor f is found and added to stack of factors
+				primeFactors.add(f);
+				// f is factored out completely
+				do { k /= f; } while (k % f == 0);
+			}
+			f++;
 		}
-
+		// works because of the fundamental theorem of arithmetic (unique factorization thm)
 		return primeFactors;
 	}
 }
