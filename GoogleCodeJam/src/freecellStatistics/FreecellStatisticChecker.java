@@ -34,7 +34,7 @@ public class FreecellStatisticChecker {
 
 		try {
 			r = new BufferedReader(new FileReader(inputFilename));
-			fw= new FileWriter("output.txt");	
+			fw= new FileWriter(outputFilename);	
 			
 			//The first line of the input contains the number of cases
 			System.out.printf("Number of entries is %d%n",Integer.parseInt(r.readLine()));
