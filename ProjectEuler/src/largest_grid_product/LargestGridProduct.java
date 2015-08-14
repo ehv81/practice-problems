@@ -22,7 +22,7 @@ public class LargestGridProduct {
 		int[][] grid;
 		int m,n;
 
-		String inputFilename = "test.txt";
+		String inputFilename = "input.txt";
 
 		try {
 			r = new BufferedReader(new FileReader(inputFilename));
