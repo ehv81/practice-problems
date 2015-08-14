@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 /*
- * Google Code Jam Problem: Store Credid
+ * Google Code Jam Problem: Store Credit
  * https://code.google.com/codejam/contest/351101/dashboard#s=p0
  */
 
