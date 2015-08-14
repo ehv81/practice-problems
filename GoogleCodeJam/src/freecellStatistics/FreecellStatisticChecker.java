@@ -1,12 +1,8 @@
 package freecellStatistics;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.util.StringTokenizer;
 
 /*
  * Google Code Jam Problem: Freecell Statistics
@@ -34,7 +30,7 @@ public class FreecellStatisticChecker {
 
 		try {
 			r = new BufferedReader(new FileReader(inputFilename));
-			fw= new FileWriter("output.txt");	
+			fw= new FileWriter(outputFilename);	
 			
 			//The first line of the input contains the number of cases
 			System.out.printf("Number of entries is %d%n",Integer.parseInt(r.readLine()));
