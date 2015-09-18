@@ -23,8 +23,8 @@ public class MinimumScalarProductFinder {
 		String outputFilename = "output.txt";
 
 		int dimension;
-		int[] v1;
-		int[] v2;
+		long[] v1;
+		long[] v2;
 		String[] coordinates;
 		
 		int numberOfCases;
@@ -41,15 +41,15 @@ public class MinimumScalarProductFinder {
 			while( caseNumber <= numberOfCases ){
 			
 				dimension = Integer.parseInt(r.readLine());
-				v1 = new int[dimension];
-				v2 = new int[dimension];
+				v1 = new long[dimension];
+				v2 = new long[dimension];
 				
 				coordinates = r.readLine().split(" ");
 				for (int i = 0; i < dimension; i++)
-					v1[i] = Integer.parseInt(coordinates[i]);
+					v1[i] = Long.parseLong(coordinates[i]);
 				coordinates = r.readLine().split(" ");
 				for (int i = 0; i < dimension; i++)
-					v2[i] = Integer.parseInt(coordinates[i]);
+					v2[i] = Long.parseLong(coordinates[i]);
 				
 				//I conjecture, that the minimum value is found when the max of v1 is multiplied with the min of v2
 				//and so on -> "anti product" on sorted arrays
@@ -73,8 +73,8 @@ public class MinimumScalarProductFinder {
 		}
 	}
 
-	private static int computeAntiProduct(int[] v1, int[] v2) {
-		int product = 0;
+	private static long computeAntiProduct(long[] v1, long[] v2) {
+		long product = 0;
 		
 		for (int i = 0; i < v1.length; i++) {
 			product += v1[i] * v2[v2.length - 1 - i];
