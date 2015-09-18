@@ -3,10 +3,6 @@ package file_system_creation;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /*
  * Google Code Jam Problem: File Fix-It
