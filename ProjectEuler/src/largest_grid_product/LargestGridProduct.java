@@ -65,8 +65,8 @@ public class LargestGridProduct {
 						if ( product > maxProduct) {
 							maxProduct = product;
 							maxProductPostion = "horizontally from index (" + (i+1) + "," + (j+1) + ")";
-							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
-									maxProduct,maxProductPostion);
+//							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
+//									maxProduct,maxProductPostion);
 						}
 					}
 					// if vertical quadruple exists
@@ -75,18 +75,28 @@ public class LargestGridProduct {
 						if ( product > maxProduct) {
 							maxProduct = product;
 							maxProductPostion = "vertically from index (" + (i+1) + "," + (j+1) + ")";
-							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
-									maxProduct,maxProductPostion);
+//							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
+//									maxProduct,maxProductPostion);
 						}
 					}
-					// if diagonal quadruple exists
+					// if diagonal down-right quadruple exists
 					if ( (i < m-3) && (j < n-3) ){
 						product = grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] *  grid[i+3][j+3];
 						if ( product > maxProduct) {
 							maxProduct = product;
-							maxProductPostion = "diagonally from index (" + (i+1) + "," + (j+1) + ")";
-							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
-									maxProduct,maxProductPostion);
+							maxProductPostion = "diagonally down-right from index (" + (i+1) + "," + (j+1) + ")";
+//							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
+//									maxProduct,maxProductPostion);
+						}
+					}
+					// if diagonal up-right quadruple exists
+					if ( (i > 2) && (j < n-3) ){
+						product = grid[i][j] * grid[i-1][j+1] * grid[i-2][j+2] *  grid[i-3][j+3];
+						if ( product > maxProduct) {
+							maxProduct = product;
+							maxProductPostion = "diagonally up-right from index (" + (i+1) + "," + (j+1) + ")";
+//							System.out.printf("The maximal product found so far equals %d and is located %s.%n",
+//									maxProduct,maxProductPostion);
 						}
 					}
 				}
