@@ -1,8 +1,6 @@
 package even_fibonacci;
 
-import static org.junit.Assert.*;
-
-import multiples_3_5.MultiplesOfThreeAndFive;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 

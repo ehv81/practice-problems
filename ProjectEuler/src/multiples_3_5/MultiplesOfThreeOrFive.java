@@ -6,7 +6,7 @@ import java.util.Stack;
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
 
-public class MultiplesOfThreeAndFive {
+public class MultiplesOfThreeOrFive {
 
 	/**
 	 * @param args
@@ -15,13 +15,13 @@ public class MultiplesOfThreeAndFive {
 		int from = 0;
 		int to = 1000;
 		
-		System.out.printf("The sum of all integers divisible by 3 and 5" +
+		System.out.printf("The sum of all integers divisible by 3 or 5" +
 				" between %d and %d equals %d.%n",
-				from,to,computeMultiplesOfThreeAndFive(from, to));
+				from,to,computeMultiplesOfThreeOrFive(from, to));
 	}
 
 
-	public static int computeMultiplesOfThreeAndFive(int from, int to) {
+	public static int computeMultiplesOfThreeOrFive(int from, int to) {
 		int sum = 0;
 		Stack<Integer> divisibleIntegers = new Stack<Integer>();
 
