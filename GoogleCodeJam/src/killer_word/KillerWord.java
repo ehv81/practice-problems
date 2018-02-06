@@ -123,7 +123,7 @@ public class KillerWord {
 
 			//otherwise, take the next char
 			char c = letterList[i];
-			String action = "char " + c;
+//			String action = "char " + c;
 
 			//if the killerWord contains c, Sean will ask
 			if (killerWord.contains(String.valueOf(c))) {

@@ -1,7 +1,5 @@
 package digit_cancelling_fractions;
 
-import java.util.Arrays;
-
 /* 
  * Project Euler Problem 33:
  * 
